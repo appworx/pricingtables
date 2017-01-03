@@ -7,6 +7,8 @@
 /* global fakewaffle */
 
 var spreadsheetID = "1ad7hOzasjT4Uo4EKWaXmk6Jz90-Da1366-RjtqxBubI";
+var columnNames = ['Plot Size (sq yd)', 'Total Price of Plot (PKR)', 'Down Payment (25%)', '18 Months Installments', '6 Quarterly Installments'];
+var columnNamesShort = ['Plot Size (sq yd)', 'Total Price of Plot (PKR)', 'Down Payment (25%)', '18 Months Installments', '6 Quarterly Installments'];
 
 $(document).ready(function () {
 
@@ -24,11 +26,11 @@ function loadTab(id) {
             + '<table class="col-md-12 table-bordered table-striped table-condensed">'
             + '<thead>'
             + '<tr>'
-            + '<th>Plot Size (sq yd)</th>'
-            + '<th>Total Price of Plot (PKR)</th>'
-            + '<th>Down Payment (25%)</th>'
-            + '<th>18 Months Installments</th>'
-            + '<th>6 Quarterly Installments</th>'
+            + '<th>' + columnNames[0] + '</th>'
+            + '<th>' + columnNames[1] + '</th>'
+            + '<th>' + columnNames[2] + '</th>'
+            + '<th>' + columnNames[3] + '</th>'
+            + '<th>' + columnNames[4] + '</th>'
             + '</tr>'
             + '</thead>'
             + '<tbody id="content' + id + '">'
@@ -42,11 +44,11 @@ function loadTab(id) {
         if (entry) {
             $(entry).each(function () {
                 $('#content' + id).append('<tr>'
-                        + '<td data-title="Plot Size">' + this.gsx$plotsizesqyd.$t + '</td>'
-                        + '<td data-title="Total / Plot">' + this.gsx$totalpriceofplotpkr.$t + '</td>'
-                        + '<td data-title="Down Payment">' + this.gsx$downpayment25.$t + '</td>'
-                        + '<td data-title="Monthly Inst.">' + this.gsx$monthsinstallments.$t + '</td>'
-                        + '<td data-title="Quarterly Inst.">' + this.gsx$quarterlyinstallments.$t + '</td>'
+                        + '<td data-title="' + columnNamesShort[0] + '">' + this.gsx$plotsizesqyd.$t + '</td>'
+                        + '<td data-title="' + columnNamesShort[1] + '">' + this.gsx$totalpriceofplotpkr.$t + '</td>'
+                        + '<td data-title="' + columnNamesShort[2] + '">' + this.gsx$downpayment25.$t + '</td>'
+                        + '<td data-title="' + columnNamesShort[3] + '">' + this.gsx$monthsinstallments.$t + '</td>'
+                        + '<td data-title="' + columnNamesShort[4] + '">' + this.gsx$quarterlyinstallments.$t + '</td>'
                         + '</tr>');
             });
         } else {
