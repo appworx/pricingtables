@@ -8,8 +8,6 @@
 
 var spreadsheetID = "1ad7hOzasjT4Uo4EKWaXmk6Jz90-Da1366-RjtqxBubI";
 var columnNames = ['Plot Size (sq yd)', 'Total Price of Plot (PKR)', 'Down Payment (25%)', '18 Months Installments', '6 Quarterly Installments'];
-var columnNamesShort = ['Plot Size (sq yd)', 'Total Price of Plot (PKR)', 'Down Payment (25%)', '18 Months Installments', '6 Quarterly Installments'];
-
 $(document).ready(function () {
 
     for (var i = 1; i <= 5; i++) {
@@ -23,7 +21,7 @@ function loadTab(id) {
     var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/" + id + "/public/values?alt=json";
 
     $('#' + id).append('<div id="no-more-tables">'
-            + '<table class="col-md-12 table-bordered table-striped table-condensed">'
+            + '<table class="col-md-12 table-bordered table-condensed">'
             + '<thead>'
             + '<tr>'
             + '<th>' + columnNames[0] + '</th>'
@@ -44,11 +42,11 @@ function loadTab(id) {
         if (entry) {
             $(entry).each(function () {
                 $('#content' + id).append('<tr>'
-                        + '<td data-title="' + columnNamesShort[0] + '">' + this.gsx$plotsizesqyd.$t + '</td>'
-                        + '<td data-title="' + columnNamesShort[1] + '">' + this.gsx$totalpriceofplotpkr.$t + '</td>'
-                        + '<td data-title="' + columnNamesShort[2] + '">' + this.gsx$downpayment25.$t + '</td>'
-                        + '<td data-title="' + columnNamesShort[3] + '">' + this.gsx$monthsinstallments.$t + '</td>'
-                        + '<td data-title="' + columnNamesShort[4] + '">' + this.gsx$quarterlyinstallments.$t + '</td>'
+                        + '<td class="responsive-cell" data-title="' + columnNames[0] + '">' + this.gsx$plotsizesqyd.$t + '</td>'
+                        + '<td class="responsive-cell" data-title="' + columnNames[1] + '">' + this.gsx$totalpriceofplotpkr.$t + '</td>'
+                        + '<td class="responsive-cell" data-title="' + columnNames[2] + '">' + this.gsx$downpayment25.$t + '</td>'
+                        + '<td class="responsive-cell" data-title="' + columnNames[3] + '">' + this.gsx$monthsinstallments.$t + '</td>'
+                        + '<td class="responsive-cell" data-title="' + columnNames[4] + '">' + this.gsx$quarterlyinstallments.$t + '</td>'
                         + '</tr>');
             });
         } else {

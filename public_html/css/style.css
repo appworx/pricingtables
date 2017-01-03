@@ -7,6 +7,18 @@ and open the template in the editor.
     Created on : 03-Jan-2017, 22:37:45
     Author     : Saminda Permauna
 */
+body {
+    background-image: url('../img/bg.png');
+    color: lightgreen;
+}
+
+.panel {
+    background: transparent;
+}
+
+.nav-label {
+    color: lightgreen;
+} 
 
 @media only screen and (max-width: 800px) {
 
@@ -27,12 +39,17 @@ and open the template in the editor.
         left: -9999px;
     }
 
-    #no-more-tables tr { border: 1px solid #ccc; }
+    #no-more-tables tr { 
+        border: 1px solid #ccc; 
+        margin: -10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 
     #no-more-tables td { 
         /* Behave  like a "row" */
         border: none;
-        border-bottom: 1px solid #eee; 
+        /*border-bottom: 1px solid #eee;*/ 
         position: relative;
         padding-left: 50%; 
         white-space: normal;
@@ -59,5 +76,7 @@ and open the template in the editor.
         content: attr(data-title); 
     }
 
-    .responsive {}
+    .responsive-cell {
+        text-align: right !important;
+    }
 }
