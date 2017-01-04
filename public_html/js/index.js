@@ -42,7 +42,7 @@ function loadTab(id) {
         if (entry) {
             $(entry).each(function () {
                 $('#content' + id).append('<tr>'
-                        + '<td class="responsive-cell" data-title="' + columnNames[0] + '">' + this.gsx$plotsizesqyd.$t + '</td>'
+                        + '<td class="responsive-cell header-cell" data-title="' + columnNames[0] + '">' + this.gsx$plotsizesqyd.$t + '</td>'
                         + '<td class="responsive-cell" data-title="' + columnNames[1] + '">' + this.gsx$totalpriceofplotpkr.$t + '</td>'
                         + '<td class="responsive-cell" data-title="' + columnNames[2] + '">' + this.gsx$downpayment25.$t + '</td>'
                         + '<td class="responsive-cell" data-title="' + columnNames[3] + '">' + this.gsx$monthsinstallments.$t + '</td>'
@@ -51,7 +51,7 @@ function loadTab(id) {
             });
         } else {
             $('#content' + id).append('<tr>'
-                    + '<td colspan=5>SOLD OUT</td>'
+                    + '<td colspan="5" class="cell-centered text-center">SOLD OUT</td>'
                     + '</tr>');
         }
     });

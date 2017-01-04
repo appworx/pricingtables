@@ -150,7 +150,6 @@ var fakewaffle = (function ($, fakewaffle) {
                     .removeClass('panel-body fw-previous-tab-pane')
                     .addClass('tab-pane')
                     .appendTo($(destination));
-
         });
 
     };
@@ -163,7 +162,7 @@ var fakewaffle = (function ($, fakewaffle) {
         // Toggle the panels when the associated tab is toggled
         tabs.on('shown.bs.tab', function (e) {
 
-            if (fakewaffle.currentPosition === 'tabs') {
+            if (fakewaffle.currentPosition === 'panel') {
                 var $current = $(e.currentTarget.hash.replace(/#/, '#collapse-'));
                 $current.collapse('show');
 
@@ -172,7 +171,6 @@ var fakewaffle = (function ($, fakewaffle) {
                     $previous.collapse('hide');
                 }
             }
-
         });
 
         // Toggle the tab when the associated panel is toggled
@@ -188,7 +186,6 @@ var fakewaffle = (function ($, fakewaffle) {
                 $(panelGroup).find('.panel-body').removeClass('active');
                 $(e.currentTarget).find('.panel-body').addClass('active');
             }
-
         });
     };
 

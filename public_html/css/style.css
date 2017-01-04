@@ -7,7 +7,7 @@ and open the template in the editor.
     Created on : 03-Jan-2017, 22:37:45
     Author     : Saminda Permauna
 */
-body {
+.content {
     background-image: url('../img/bg.png');
     color: lightgreen;
 }
@@ -17,7 +17,9 @@ body {
 }
 
 .nav-label {
+    width: 100%;
     color: lightgreen;
+    display: inline-block;
 } 
 
 @media only screen and (max-width: 800px) {
@@ -78,5 +80,14 @@ body {
 
     .responsive-cell {
         text-align: right !important;
+    }
+
+    .header-cell {
+        background: grey;
+    }
+
+    .cell-centered {
+        padding-left: 0 !important;
+        text-align: center !important;
     }
 }
