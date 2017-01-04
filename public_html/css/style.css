@@ -10,6 +10,7 @@ and open the template in the editor.
 .content {
     background-image: url('../img/bg.png');
     color: lightgreen;
+    padding-bottom: 50px;
 }
 
 .panel {
@@ -89,5 +90,9 @@ and open the template in the editor.
     .cell-centered {
         padding-left: 0 !important;
         text-align: center !important;
+    }
+    
+    .content {
+        padding-bottom: 0;
     }
 }
