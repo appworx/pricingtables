@@ -63,8 +63,12 @@ function loadTab(id, sheet) {
                     $(columnNames).each(function (columnId) {
                         var cellValue = row[rowId][columnNames[columnId]];
 
+                        if (cellValue === '') {
+                            cellValue = 'n/a';
+                        }
+
                         if (cellValue === emptySheetMarker) {
-                            html += '<td class="responsive-cell cell-centered text-center" colspan="5" >' + cellValue + '</td>';
+                            html += '<td class="responsive-cell cell-centered text-center" colspan="' + columnNames.length + '" >' + cellValue + '</td>';
                             
                             return false;
                         } else if (columnId === 0) {
