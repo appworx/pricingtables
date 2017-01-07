@@ -13,6 +13,11 @@ and open the template in the editor.
     padding-bottom: 50px;
 }
 
+.spacer {
+    display: block;
+    height: 25px;
+}
+
 .panel {
     background: transparent;
 }
@@ -22,6 +27,10 @@ and open the template in the editor.
     color: lightgreen;
     display: inline-block;
 } 
+
+.list {
+    padding-left: 20px;
+}
 
 @media only screen and (max-width: 800px) {
 
@@ -94,5 +103,9 @@ and open the template in the editor.
 
     .content {
         padding-bottom: 0;
+    }
+    
+    .spacer {
+        height: 0;
     }
 }

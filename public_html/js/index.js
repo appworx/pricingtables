@@ -63,17 +63,21 @@ function loadTab(id, sheet) {
                     $(columnNames).each(function (columnId) {
                         var cellValue = row[rowId][columnNames[columnId]];
 
+                        if (!isNaN(cellValue)) {
+                            cellValue = formatNumber(cellValue);
+                        }
+
                         if (cellValue === '') {
                             cellValue = 'n/a';
                         }
 
                         if (cellValue === emptySheetMarker) {
                             html += '<td class="responsive-cell cell-centered text-center" colspan="' + columnNames.length + '" >' + cellValue + '</td>';
-                            
+
                             return false;
                         } else if (columnId === 0) {
                             html += '<td class="responsive-cell header-cell" data-title="' + columnNames[columnId].toString().replace(/_/g, ' ') + '">' + cellValue + '</td>';
-                            
+
                             return true;
                         }
 
@@ -90,4 +94,8 @@ function loadTab(id, sheet) {
             $('#' + id).append('<img src="https://d13yacurqjgara.cloudfront.net/users/383/screenshots/419345/sold-out-sign.png" alt="Sold out sign">');
         }
     });
+}
+
+function formatNumber(number) {
+    return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 }
